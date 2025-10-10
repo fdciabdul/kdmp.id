@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section id="hero" className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

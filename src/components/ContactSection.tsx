@@ -1,182 +1,170 @@
 'use client';
 
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-import { useState } from 'react';
+import { MapPin, Phone, Mail, MessageCircle, Users, Building2, Globe } from 'lucide-react';
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Alamat',
-      details: ['Jl. Raya Desa Sejahtera No. 123', 'Kecamatan Makmur, Kabupaten Sentosa', 'Jawa Tengah 12345']
+      title: 'Alamat Kantor',
+      primary: 'Menara Palma Jalan H.R Rasuna Said Lantai 12',
+      secondary: 'Kecamatan Setiabudi, Kota Jakarta Selatan',
+      tertiary: 'Jakarta 12710',
+      color: 'from-red-500 to-pink-500'
     },
     {
       icon: Phone,
-      title: 'Telepon',
-      details: ['(0274) 123-4567', '0812-3456-7890', 'WhatsApp: 0812-3456-7890']
+      title: 'Telepon & WhatsApp',
+      primary: '+62 823-2084-1260',
+      tertiary: 'WhatsApp: +62 823-2084-1260',
+      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: ['info@koperasisejahtera.co.id', 'admin@koperasisejahtera.co.id', 'cs@koperasisejahtera.co.id']
+      title: 'Email Resmi',
+      primary: 'admin@kdmp.id',
+      color: 'from-blue-500 to-cyan-500'
+    }
+  ];
+
+  const quickActions = [
+    {
+      icon: MessageCircle,
+      title: 'Chat WhatsApp',
+      description: 'Hubungi kami langsung via WhatsApp untuk respon cepat',
+      action: 'Chat Sekarang',
+      color: 'from-green-500 to-emerald-600'
     },
     {
-      icon: Clock,
-      title: 'Jam Operasional',
-      details: ['Senin - Jumat: 08:00 - 16:00', 'Sabtu: 08:00 - 12:00', 'Minggu: Tutup']
+      icon: Users,
+      title: 'Konsultasi Gratis',
+      description: 'Dapatkan konsultasi gratis tentang layanan koperasi',
+      action: 'Jadwalkan Konsultasi',
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      icon: Building2,
+      title: 'Kunjungi Kantor',
+      description: 'Datang langsung ke kantor kami untuk pelayanan terbaik',
+      action: 'Lihat Lokasi',
+      color: 'from-red-500 to-pink-600'
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container-max section-padding">
+    <section id="contact" className="relative py-20 overflow-hidden">
+      {/* Background with gradient and decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-red-50"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-red-100/30 to-pink-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100/30 to-indigo-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="container-max section-padding relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Hubungi <span className="text-primary-600">Kami</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl mb-6">
+            <Globe className="w-8 h-8 text-white" />
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-gray-900 via-red-600 to-pink-600 bg-clip-text text-transparent">
+              Hubungi Kami
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Kami siap membantu Anda dengan pertanyaan, konsultasi, atau informasi lebih lanjut 
-            tentang layanan koperasi. Jangan ragu untuk menghubungi kami.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Kami siap melayani Anda dengan sepenuh hati. Hubungi kami melalui berbagai channel komunikasi 
+            yang tersedia untuk mendapatkan informasi dan layanan terbaik.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-8">Informasi Kontak</h3>
-            
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => {
-                const Icon = info.icon;
-                return (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-primary-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h4>
-                      {info.details.map((detail, detailIndex) => (
-                        <p key={detailIndex} className="text-gray-600">{detail}</p>
-                      ))}
-                    </div>
+        {/* Contact Information Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20 max-w-5xl mx-auto">
+          {contactInfo.map((info, index) => {
+            const Icon = info.icon;
+            return (
+              <div 
+                key={index} 
+                className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20"
+              >
+                {/* Gradient background on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${info.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`}></div>
+                
+                {/* Icon */}
+                <div className={`relative w-16 h-16 bg-gradient-to-br ${info.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+                
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
+                    {info.title}
+                  </h3>
+                  <div className="space-y-2">
+                    <p className="text-gray-800 font-semibold">{info.primary}</p>
+                    <p className="text-gray-600">{info.secondary}</p>
+                    <p className="text-gray-500 text-sm">{info.tertiary}</p>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="mt-8 bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <MapPin className="w-12 h-12 mx-auto mb-2" />
-                <p>Peta Lokasi Koperasi</p>
-                <p className="text-sm">Jl. Raya Desa Sejahtera No. 123</p>
+                </div>
+                
+                {/* Decorative corner */}
+                <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${info.color} opacity-10 rounded-bl-full`}></div>
               </div>
-            </div>
+            );
+          })}
+        </div>
+
+        {/* Quick Actions Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Cara Cepat <span className="text-red-600">Menghubungi Kami</span>
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Pilih cara yang paling nyaman untuk Anda berkomunikasi dengan tim kami
+            </p>
           </div>
-
-          {/* Contact Form */}
-          <div>
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Kirim Pesan</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nama Lengkap *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="Masukkan nama lengkap Anda"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="nama@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nomor Telepon
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="0812-3456-7890"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Pesan *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300 resize-none"
-                    placeholder="Tulis pesan atau pertanyaan Anda di sini..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-primary group"
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {quickActions.map((action, index) => {
+              const Icon = action.icon;
+              return (
+                <div 
+                  key={index}
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-white/30"
                 >
-                  <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  Kirim Pesan
-                </button>
-              </form>
-            </div>
+                  {/* Icon */}
+                  <div className={`w-14 h-14 bg-gradient-to-br ${action.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                  
+                  {/* Content */}
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">{action.title}</h4>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{action.description}</p>
+                  
+                  {/* Action Button */}
+                  {action.title === 'Chat WhatsApp' ? (
+                    <a 
+                      href="https://wa.me/6282320841260" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`block w-full py-3 px-6 bg-gradient-to-r ${action.color} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 group-hover:scale-105 text-center`}
+                    >
+                      {action.action}
+                    </a>
+                  ) : (
+                    <button className={`w-full py-3 px-6 bg-gradient-to-r ${action.color} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
+                      {action.action}
+                    </button>
+                  )}
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-white/20 to-white/5 rounded-full"></div>
+                  <div className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-white/10 to-white/5 rounded-full"></div>
+                </div>
+              );
+            })}
           </div>
         </div>
+
+
       </div>
     </section>
   );

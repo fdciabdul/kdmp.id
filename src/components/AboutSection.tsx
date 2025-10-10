@@ -1,114 +1,124 @@
 'use client';
 
-import { Target, Eye, Award, Heart } from 'lucide-react';
+import { Target, Star, Award, Users, Heart } from 'lucide-react';
 
 export default function AboutSection() {
   const values = [
     {
       icon: Target,
-      title: 'Misi Kami',
-      description: 'Memberdayakan masyarakat pedesaan melalui koperasi yang solid dan berkelanjutan untuk mencapai kesejahteraan bersama.'
-    },
-    {
-      icon: Eye,
-      title: 'Visi Kami',
-      description: 'Menjadi koperasi terdepan yang mengutamakan kepentingan anggota dan berkontribusi pada pembangunan ekonomi desa.'
-    },
-    {
-      icon: Award,
-      title: 'Prestasi',
-      description: 'Meraih berbagai penghargaan sebagai koperasi terbaik tingkat kabupaten dan provinsi selama 5 tahun berturut-turut.'
-    },
-    {
-      icon: Heart,
-      title: 'Komitmen',
-      description: 'Berkomitmen penuh untuk transparansi, akuntabilitas, dan pelayanan terbaik kepada seluruh anggota koperasi.'
+      title: 'Visi & Misi',
+      description: 'Mewujudkan kemandirian ekonomi desa melalui koperasi modern berbasis digital yang memperkuat ketahanan pangan dan kesehatan rakyat.'
     }
   ];
 
+  const stats = [
+    { number: '83,762', label: 'Koperasi Desa', icon: Users },
+    { number: '16', label: 'Kementerian', icon: Award },
+    { number: '137', label: 'Kota', icon: Star },
+    { number: '300+', label: 'Klien', icon: Heart }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="container-max section-padding">
+    <section id="about" className="relative py-20 overflow-hidden">
+      {/* Background dengan gradient merah putih */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-red-100"></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Tentang <span className="text-primary-600">Koperasi Kami</span>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full mb-6">
+            <Target className="w-8 h-8 text-white" />
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+              Tentang
+            </span>{' '}
+            <span className="text-gray-900">Koperasi Kami</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Koperasi Merah Putih (KDMP & KKMP) beroperasi berdasarkan Instruksi Presiden Nomor 9 Tahun 2025 dengan 
+          <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <span className="font-semibold text-red-700">Koperasi Merah Putih (KDMP & KKMP)</span> beroperasi berdasarkan 
+            <span className="font-semibold text-red-700"> Instruksi Presiden Nomor 9 Tahun 2025</span> dengan 
             dukungan dari 16 Kementerian. Dikelola oleh PT Subaga Inti Milenia (Subaga Group) sebagai holding, 
-            menaungi 13 perusahaan, 31 HAKI, dan lebih dari 300 klien di 137 kota. Terdapat 83.762 koperasi 
-            desa/kelurahan (KDMP & KKMP) di seluruh Indonesia.
+            menaungi 13 perusahaan, 31 HAKI, dan lebih dari 300 klien di 137 kota.
           </p>
         </div>
 
-        {/* Story Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Perjalanan Membangun Kesejahteraan
-            </h3>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
-              <p>
-                Berawal dari sekelompok petani yang memiliki visi sama untuk meningkatkan 
-                kesejahteraan ekonomi masyarakat desa, koperasi kami tumbuh menjadi institusi 
-                keuangan yang dipercaya oleh ribuan anggota.
-              </p>
-              <p>
-                Dengan prinsip gotong royong dan transparansi, kami telah membantu anggota 
-                mengembangkan usaha, mengakses modal dengan bunga rendah, dan meningkatkan 
-                taraf hidup keluarga.
-              </p>
-              <p>
-                Hari ini, koperasi kami tidak hanya melayani simpan pinjam, tetapi juga 
-                mengembangkan berbagai unit usaha yang memberikan manfaat langsung kepada 
-                masyarakat sekitar.
-              </p>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <div className="bg-primary-600 rounded-2xl p-8 text-white">
-              <h4 className="text-2xl font-bold mb-6">Pencapaian Kami</h4>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span>Total Aset</span>
-                  <span className="font-bold">Rp 15,2 Miliar</span>
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div 
+                key={index}
+                className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-red-100"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="flex items-center justify-between">
-                  <span>Anggota Aktif</span>
-                  <span className="font-bold">5,247 Orang</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Kredit Tersalurkan</span>
-                  <span className="font-bold">Rp 8,9 Miliar</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>SHU Dibagikan</span>
-                  <span className="font-bold">Rp 890 Juta</span>
-                </div>
+                <h3 className="text-3xl font-bold text-red-600 mb-2">{stat.number}</h3>
+                <p className="text-gray-600 font-medium">{stat.label}</p>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Values Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Main Visi Misi Card */}
+        <div className="flex justify-center">
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
               <div 
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+                className="group relative bg-gradient-to-br from-white via-red-50 to-white rounded-3xl p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 text-center max-w-4xl border-2 border-red-100 hover:border-red-200 overflow-hidden"
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-8 h-8 text-primary-600" />
+                {/* Decorative background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-0 left-0 w-32 h-32 bg-red-500 rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-red-600 rounded-full blur-2xl"></div>
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                
+                <div className="relative z-10">
+                  <div className="w-32 h-32 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                    <Icon className="w-16 h-16 text-white" />
+                  </div>
+                  
+                  <h4 className="text-4xl md:text-5xl font-bold mb-8">
+                    <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+                      {value.title}
+                    </span>
+                  </h4>
+                  
+                  <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto mb-8"></div>
+                  
+                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                    {value.description}
+                  </p>
+                  
+                  {/* Decorative quote marks */}
+                  <div className="absolute top-8 left-8 text-6xl text-red-200 font-serif">"</div>
+                  <div className="absolute bottom-8 right-8 text-6xl text-red-200 font-serif rotate-180">"</div>
+                </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom decorative element */}
+        <div className="flex justify-center mt-16">
+          <div className="flex space-x-2">
+            {[...Array(5)].map((_, i) => (
+              <div 
+                key={i} 
+                className="w-3 h-3 bg-gradient-to-r from-red-500 to-red-600 rounded-full animate-pulse"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

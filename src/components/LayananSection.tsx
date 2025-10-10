@@ -1,0 +1,309 @@
+'use client';
+
+import { 
+  Wheat, 
+  Truck, 
+  Users, 
+  Stethoscope, 
+  Building2, 
+  Calculator, 
+  BarChart3,
+  Network,
+  CreditCard,
+  QrCode,
+  Wallet,
+  TrendingUp,
+  Package,
+  Warehouse,
+  UserCheck,
+  Bell,
+  Video,
+  Pill,
+  Activity,
+  DollarSign,
+  FileText,
+  PieChart,
+  Globe
+} from 'lucide-react';
+
+export default function LayananSection() {
+  const digitalModules = [
+    {
+      icon: Wheat,
+      title: 'Modul Bank Pangan',
+      description: 'Sistem perbankan khusus untuk sektor pangan dengan teknologi terdepan.',
+      features: [
+        'Simpanan & Pinjaman Digital',
+        'Pencatatan Hasil Tani Otomatis', 
+        'Integrasi QRIS, Transfer & E-Wallet',
+        'Scoring Kredit Berbasis AI'
+      ],
+      color: 'from-green-500 to-emerald-600',
+      bgColor: 'from-green-50 to-emerald-50',
+      iconBg: 'bg-gradient-to-r from-green-500 to-emerald-600'
+    },
+    {
+      icon: Truck,
+      title: 'Modul eLogistik & Inventory',
+      description: 'Manajemen logistik dan inventori terintegrasi untuk efisiensi maksimal.',
+      features: [
+        'Manajemen Stok Real-time',
+        'Sistem Gudang Pintar',
+        'Distribusi & Supplier Management',
+        'Forecasting Kebutuhan AI'
+      ],
+      color: 'from-blue-500 to-cyan-600',
+      bgColor: 'from-blue-50 to-cyan-50',
+      iconBg: 'bg-gradient-to-r from-blue-500 to-cyan-600'
+    },
+    {
+      icon: Users,
+      title: 'Modul Keanggotaan',
+      description: 'Platform keanggotaan digital yang komprehensif dan user-friendly.',
+      features: [
+        'Registrasi Online/Offline',
+        'ID Digital & QR Code',
+        'Riwayat Aktivitas Lengkap',
+        'Hak Suara & Notifikasi Otomatis'
+      ],
+      color: 'from-purple-500 to-violet-600',
+      bgColor: 'from-purple-50 to-violet-50',
+      iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Modul Tele-Health Services',
+      description: 'Layanan kesehatan digital terintegrasi untuk akses kesehatan yang mudah.',
+      features: [
+        'Konsultasi Online 24/7',
+        'Resep Elektronik Digital',
+        'Asesmen Kesehatan AI',
+        'Integrasi Klinik & Apotek'
+      ],
+      color: 'from-red-500 to-pink-600',
+      bgColor: 'from-red-50 to-pink-50',
+      iconBg: 'bg-gradient-to-r from-red-500 to-pink-600'
+    },
+    {
+      icon: Building2,
+      title: 'Modul Gerai Klinik & Obat',
+      description: 'Manajemen gerai kesehatan dan farmasi dengan sistem terintegrasi.',
+      features: [
+        'Manajemen Layanan Medis',
+        'Stok Obat Real-time',
+        'Pelaporan BPJS Otomatis',
+        'Transaksi Farmasi Digital'
+      ],
+      color: 'from-orange-500 to-amber-600',
+      bgColor: 'from-orange-50 to-amber-50',
+      iconBg: 'bg-gradient-to-r from-orange-500 to-amber-600'
+    },
+    {
+      icon: Calculator,
+      title: 'Modul Keuangan',
+      description: 'Sistem keuangan komprehensif dengan pelaporan real-time.',
+      features: [
+        'Kas & Jurnal Otomatis',
+        'Perhitungan SHU Digital',
+        'Laporan Neraca Real-time',
+        'Arus Kas & Analytics'
+      ],
+      color: 'from-indigo-500 to-blue-600',
+      bgColor: 'from-indigo-50 to-blue-50',
+      iconBg: 'bg-gradient-to-r from-indigo-500 to-blue-600'
+    },
+    {
+      icon: BarChart3,
+      title: 'Modul Dashboard EIS',
+      description: 'Executive Information System dengan visualisasi data yang powerful.',
+      features: [
+        'KPI Koperasi Real-time',
+        'Visualisasi Laporan Keuangan',
+        'Monitoring Kesehatan Operasional',
+        'Business Intelligence Dashboard'
+      ],
+      color: 'from-teal-500 to-green-600',
+      bgColor: 'from-teal-50 to-green-50',
+      iconBg: 'bg-gradient-to-r from-teal-500 to-green-600'
+    }
+  ];
+
+  const integrations = [
+    {
+      icon: Network,
+      title: 'Dinas Koperasi',
+      description: 'Integrasi dengan sistem pemerintah daerah'
+    },
+    {
+      icon: Activity,
+      title: 'BPJS Kesehatan',
+      description: 'Koneksi langsung dengan sistem BPJS'
+    },
+    {
+      icon: Globe,
+      title: 'Mitra Strategis',
+      description: 'Jaringan partner bisnis nasional'
+    }
+  ];
+
+  return (
+    <section id="services" className="relative py-20 overflow-hidden">
+      {/* Background dengan gradient digital */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"></div>
+      
+      {/* Decorative tech elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      
+      {/* Tech grid pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="grid grid-cols-12 gap-4 h-full">
+          {[...Array(144)].map((_, i) => (
+            <div key={i} className="border border-blue-300 rounded"></div>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-8 shadow-xl">
+            <Network className="w-10 h-10 text-white" />
+          </div>
+          
+          <h2 className="text-5xl md:text-7xl font-bold mb-8">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Ekosistem Digital
+            </span>
+          </h2>
+          
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-10"></div>
+          
+          <p className="text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-medium">
+            <span className="font-bold text-indigo-700">KDMP.ID</span> menghadirkan solusi digital lengkap dari 
+            <span className="font-semibold text-blue-700"> pangan hingga kesehatan</span>, dalam satu platform 
+            <span className="font-bold text-purple-700"> koperasi nasional</span> yang terintegrasi.
+          </p>
+        </div>
+
+        {/* Digital Modules Grid */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
+          {digitalModules.map((module, index) => {
+            const Icon = module.icon;
+            return (
+              <div 
+                key={index}
+                className={`group relative bg-gradient-to-br ${module.bgColor} backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-white/50 overflow-hidden`}
+              >
+                {/* Decorative background pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white to-transparent rounded-full blur-xl"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white to-transparent rounded-full blur-lg"></div>
+                </div>
+                
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 ${module.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <Icon className="w-10 h-10 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-indigo-700 transition-colors duration-300">
+                    {module.title}
+                  </h3>
+                  
+                  <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                    {module.description}
+                  </p>
+                  
+                  <div className="space-y-3">
+                    {module.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center text-gray-700">
+                        <div className={`w-3 h-3 bg-gradient-to-r ${module.color} rounded-full mr-3 flex-shrink-0`}></div>
+                        <span className="text-sm font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <button className={`mt-8 w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105`}>
+                    Jelajahi Modul
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Integration Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Integrasi Sistem Eksternal
+              </span>
+            </h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Terhubung dengan berbagai sistem pemerintah dan mitra strategis untuk ekosistem yang komprehensif
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {integrations.map((integration, index) => {
+              const Icon = integration.icon;
+              return (
+                <div 
+                  key={index}
+                  className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-indigo-100"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">{integration.title}</h4>
+                  <p className="text-gray-600 font-medium">{integration.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-12 md:p-16 text-center text-white shadow-2xl">
+          <div className="max-w-4xl mx-auto">
+            <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8">
+              <Network className="w-12 h-12 text-white" />
+            </div>
+            
+            <h3 className="text-4xl md:text-5xl font-bold mb-6">
+              Bergabung dengan Revolusi Digital
+            </h3>
+            
+            <p className="text-xl mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed">
+              Rasakan pengalaman koperasi masa depan dengan teknologi terdepan. 
+              Akses semua modul digital dan mulai transformasi bisnis Anda hari ini.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Mulai Sekarang
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105">
+                Demo Platform
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom decorative element */}
+        <div className="flex justify-center mt-16">
+          <div className="flex space-x-3">
+            {[...Array(7)].map((_, i) => (
+              <div 
+                key={i} 
+                className="w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full animate-pulse"
+                style={{ animationDelay: `${i * 0.3}s` }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -24,34 +24,21 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#beranda" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+          {/* Desktop Navigation - positioned more to the right */}
+          <nav className="hidden md:flex items-center space-x-8 ml-auto mr-8">
+            <a href="#hero" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Beranda
             </a>
-            <a href="#tentangkami" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
-              Tentangkami
+            <a href="#about" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+              Tentang Kami
             </a>
-            <a href="#layanandigital" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <a href="#services" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Layanan Digital
             </a>
             <a href="#contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
-              Contact
+              Kontak
             </a>
           </nav>
-
-          {/* Right Side Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            {/* Search Icon */}
-            <button className="p-2 text-gray-600 hover:text-red-600 transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Sign Up Button */}
-            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-md">
-              Sign up
-            </button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -67,25 +54,25 @@ const Header = () => {
           <div className="md:hidden mt-4 py-4 border-t border-red-100">
             <nav className="flex flex-col space-y-4">
               <a
-                href="#home"
+                href="#hero"
                 className="text-gray-700 hover:text-red-600 font-medium transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Beranda
               </a>
               <a
-                href="#service"
+                href="#about"
                 className="text-gray-700 hover:text-red-600 font-medium transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Service
+                Tentang Kami
               </a>
               <a
-                href="#agents"
+                href="#services"
                 className="text-gray-700 hover:text-red-600 font-medium transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Agents
+                Layanan Digital
               </a>
               <a
                 href="#contact"
@@ -94,14 +81,6 @@ const Header = () => {
               >
                 Contact
               </a>
-              <div className="flex items-center space-x-4 pt-4">
-                <button className="p-2 text-gray-600 hover:text-red-600 transition-colors">
-                  <Search className="w-5 h-5" />
-                </button>
-                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300">
-                  Sign up
-                </button>
-              </div>
             </nav>
           </div>
         )}
