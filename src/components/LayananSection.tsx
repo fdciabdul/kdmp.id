@@ -223,9 +223,7 @@ export default function LayananSection() {
                     ))}
                   </div>
                   
-                  <button className={`mt-8 w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105`}>
-                    Jelajahi Modul
-                  </button>
+
                 </div>
               </div>
             );
