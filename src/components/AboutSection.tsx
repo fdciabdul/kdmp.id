@@ -35,8 +35,10 @@ export default function AboutSection() {
             Tentang <span className="text-primary-600">Koperasi Kami</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Didirikan pada tahun 1995, koperasi kami telah menjadi tulang punggung ekonomi masyarakat 
-            pedesaan dengan fokus pada pemberdayaan anggota dan pengembangan usaha bersama.
+            Koperasi Merah Putih (KDMP & KKMP) beroperasi berdasarkan Instruksi Presiden Nomor 9 Tahun 2025 dengan 
+            dukungan dari 16 Kementerian. Dikelola oleh PT Subaga Inti Milenia (Subaga Group) sebagai holding, 
+            menaungi 13 perusahaan, 31 HAKI, dan lebih dari 300 klien di 137 kota. Terdapat 83.762 koperasi 
+            desa/kelurahan (KDMP & KKMP) di seluruh Indonesia.
           </p>
         </div>
 
