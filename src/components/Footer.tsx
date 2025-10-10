@@ -1,6 +1,6 @@
 'use client';
 
-import { Building2, MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Building2, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
   const quickLinks = [
@@ -20,7 +20,6 @@ export default function Footer() {
   const socialLinks = [
     { icon: Facebook, href: '#', name: 'Facebook' },
     { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Twitter, href: '#', name: 'Twitter' },
     { icon: Youtube, href: '#', name: 'YouTube' },
   ];
 

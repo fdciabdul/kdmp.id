@@ -149,6 +149,15 @@ export default function ContactSection() {
                     >
                       {action.action}
                     </a>
+                  ) : action.title === 'Kunjungi Kantor' ? (
+                    <a 
+                      href="https://share.google/7k2K3LUvZOHvuxCa9" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`block w-full py-3 px-6 bg-gradient-to-r ${action.color} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 group-hover:scale-105 text-center`}
+                    >
+                      {action.action}
+                    </a>
                   ) : (
                     <button className={`w-full py-3 px-6 bg-gradient-to-r ${action.color} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
                       {action.action}
