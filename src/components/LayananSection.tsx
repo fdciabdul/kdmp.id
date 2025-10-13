@@ -40,7 +40,8 @@ export default function LayananSection() {
       ],
       color: 'from-green-500 to-emerald-600',
       bgColor: 'from-green-50 to-emerald-50',
-      iconBg: 'bg-gradient-to-r from-green-500 to-emerald-600'
+      iconBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
+      url: 'https://koperasi-merahputih-jateng-dev.transmedika.co.id/'
     },
     {
       icon: Truck,
@@ -54,7 +55,8 @@ export default function LayananSection() {
       ],
       color: 'from-blue-500 to-cyan-600',
       bgColor: 'from-blue-50 to-cyan-50',
-      iconBg: 'bg-gradient-to-r from-blue-500 to-cyan-600'
+      iconBg: 'bg-gradient-to-r from-blue-500 to-cyan-600',
+      url: 'https://devprem.gudang2go.com/kdmp'
     },
     {
       icon: Users,
@@ -68,7 +70,8 @@ export default function LayananSection() {
       ],
       color: 'from-purple-500 to-violet-600',
       bgColor: 'from-purple-50 to-violet-50',
-      iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600'
+      iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600',
+      url: 'https://anggota.kdmp.id/'
     },
     {
       icon: Stethoscope,
@@ -82,7 +85,8 @@ export default function LayananSection() {
       ],
       color: 'from-red-500 to-pink-600',
       bgColor: 'from-red-50 to-pink-50',
-      iconBg: 'bg-gradient-to-r from-red-500 to-pink-600'
+      iconBg: 'bg-gradient-to-r from-red-500 to-pink-600',
+      url: 'http://dokter-jateng-sehat-dev.transmedika.co.id'
     },
     {
       icon: Building2,
@@ -96,7 +100,8 @@ export default function LayananSection() {
       ],
       color: 'from-orange-500 to-amber-600',
       bgColor: 'from-orange-50 to-amber-50',
-      iconBg: 'bg-gradient-to-r from-orange-500 to-amber-600'
+      iconBg: 'bg-gradient-to-r from-orange-500 to-amber-600',
+      url: 'http://mobil-klinik-jateng-sehat-dev.transmedika.co.id'
     },
     {
       icon: Calculator,
@@ -110,7 +115,8 @@ export default function LayananSection() {
       ],
       color: 'from-indigo-500 to-blue-600',
       bgColor: 'from-indigo-50 to-blue-50',
-      iconBg: 'bg-gradient-to-r from-indigo-500 to-blue-600'
+      iconBg: 'bg-gradient-to-r from-indigo-500 to-blue-600',
+      url: 'https://koperasi-dev.kdmp.id/'
     },
     {
       icon: BarChart3,
@@ -124,7 +130,8 @@ export default function LayananSection() {
       ],
       color: 'from-teal-500 to-green-600',
       bgColor: 'from-teal-50 to-green-50',
-      iconBg: 'bg-gradient-to-r from-teal-500 to-green-600'
+      iconBg: 'bg-gradient-to-r from-teal-500 to-green-600',
+      hideButton: true
     }
   ];
 
@@ -223,8 +230,26 @@ export default function LayananSection() {
                     ))}
                   </div>
                   
-
-                </div>
+                  {!module.hideButton && (
+                    module.url ? (
+                      <a
+                        href={module.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`mt-8 block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center`}
+                      >
+                        Buka Modul
+                      </a>
+                    ) : (
+                      <button
+                        disabled
+                        className={`mt-8 w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed`}
+                      >
+                        Segera Hadir
+                      </button>
+                    )
+                  )}
+                 </div>
               </div>
             );
           })}

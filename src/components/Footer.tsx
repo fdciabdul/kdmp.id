@@ -3,8 +3,24 @@
 import { Building2, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
+  const handleHashClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        try {
+          history.replaceState(null, '', href);
+        } catch {}
+      }
+    }
+  };
   const quickLinks = [
-    { name: 'Beranda', href: '#home' },
+    { name: 'Beranda', href: '#hero' },
     { name: 'Tentang Kami', href: '#about' },
     { name: 'Layanan', href: '#services' },
     { name: 'Kontak', href: '#contact' },
@@ -38,15 +54,14 @@ export default function Footer() {
                 <Building2 className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white drop-shadow-lg">Koperasi Sejahtera Bersama</h3>
+                <h3 className="text-2xl font-bold text-white drop-shadow-lg">Koperasi Desa Merah Putih</h3>
                 <p className="text-white/80 text-sm">Membangun Kesejahteraan Bersama</p>
               </div>
             </div>
             
             <p className="text-white/90 mb-6 leading-relaxed drop-shadow-sm">
-              Koperasi yang telah dipercaya selama 28 tahun dalam melayani masyarakat pedesaan. 
-              Kami berkomitmen untuk terus memberikan pelayanan terbaik dan membangun 
-              kesejahteraan ekonomi anggota.
+              Koperasi yang terpercaya dalam melayani masyarakat pedesaan. Kami berkomitmen untuk 
+              terus memberikan pelayanan terbaik dan membangun kesejahteraan ekonomi anggota.
             </p>
 
             <div className="space-y-3">
@@ -80,6 +95,7 @@ export default function Footer() {
                 <li key={index}>
                   <a 
                     href={link.href}
+                    onClick={(e) => handleHashClick(e, link.href)}
                     className="text-white/80 hover:text-white transition-colors duration-300"
                   >
                     {link.name}
