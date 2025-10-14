@@ -144,7 +144,7 @@ export default function Footer() {
             
             <div className="text-center md:text-right">
               <p className="text-white/80 text-sm drop-shadow-sm">
-                © {new Date().getFullYear()} Koperasi Sejahtera Bersama. Semua hak dilindungi.
+                © {new Date().getFullYear()} Koperasi Desa Merah Putih. Semua hak dilindungi.
               </p>
               <p className="text-white/60 text-xs mt-1 drop-shadow-sm">
                 Dibuat dengan ❤️ untuk kemajuan koperasi Indonesia
