@@ -155,41 +155,42 @@ export default function LayananSection() {
 
   return (
     <section id="services" className="relative py-20 overflow-hidden">
-      {/* Background dengan gradient digital */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"></div>
+      {/* Background dengan gradient merah-putih yang elegan */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-red-100"></div>
       
-      {/* Decorative tech elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      {/* Decorative tech elements dengan aksen merah-putih */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-red-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 shadow-2xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-300/40 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 shadow-2xl"></div>
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-red-100/30 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
       
-      {/* Tech grid pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Tech grid pattern dengan warna merah */}
+      <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 gap-4 h-full">
           {[...Array(144)].map((_, i) => (
-            <div key={i} className="border border-blue-300 rounded"></div>
+            <div key={i} className="border border-red-200/60 rounded bg-red-100/20"></div>
           ))}
         </div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header dengan aksen merah-putih */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-8 shadow-xl">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full mb-8 shadow-2xl border-2 border-red-200/50">
             <Network className="w-10 h-10 text-white" />
           </div>
           
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent drop-shadow-lg">
               Ekosistem Digital
             </span>
           </h2>
           
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-10"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-red-500 via-red-600 to-red-700 mx-auto mb-10 shadow-lg"></div>
           
-          <p className="text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-medium">
-            <span className="font-bold text-indigo-700">KDMP.ID</span> menghadirkan solusi digital lengkap dari 
-            <span className="font-semibold text-blue-700"> pangan hingga kesehatan</span>, dalam satu platform 
-            <span className="font-bold text-purple-700"> koperasi nasional</span> yang terintegrasi.
+          <p className="text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-medium bg-red-50/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-red-200/40">
+            <span className="font-bold text-red-800">KDMP.ID</span> menghadirkan solusi digital lengkap dari 
+            <span className="font-semibold text-red-700"> pangan hingga kesehatan</span>, dalam satu platform 
+            <span className="font-bold text-red-900"> koperasi nasional</span> yang terintegrasi.
           </p>
         </div>
 
@@ -199,56 +200,57 @@ export default function LayananSection() {
             const Icon = module.icon;
             return (
               <div 
-                key={index}
-                className={`group relative bg-gradient-to-br ${module.bgColor} backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-white/50 overflow-hidden`}
-              >
-                {/* Decorative background pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white to-transparent rounded-full blur-xl"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white to-transparent rounded-full blur-lg"></div>
-                </div>
+                 key={index}
+                 className="group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden"
+               >
+                 {/* Decorative background pattern dengan aksen merah-putih */}
+                 <div className="absolute inset-0 opacity-20">
+                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-200 to-red-300 rounded-full blur-xl"></div>
+                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-red-100 to-red-200 rounded-full blur-lg"></div>
+                   <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-red-200/40 rounded-full blur-md -translate-x-1/2 -translate-y-1/2"></div>
+                 </div>
                 
                 <div className="relative z-10">
-                  <div className={`w-20 h-20 ${module.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <Icon className="w-10 h-10 text-white" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-indigo-700 transition-colors duration-300">
-                    {module.title}
-                  </h3>
-                  
-                  <p className="text-gray-700 mb-6 leading-relaxed font-medium">
-                    {module.description}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {module.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center text-gray-700">
-                        <div className={`w-3 h-3 bg-gradient-to-r ${module.color} rounded-full mr-3 flex-shrink-0`}></div>
-                        <span className="text-sm font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {!module.hideButton && (
-                    module.url ? (
-                      <a
-                        href={module.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`mt-8 block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center`}
-                      >
-                        Buka Modul
-                      </a>
-                    ) : (
-                      <button
-                        disabled
-                        className={`mt-8 w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed`}
-                      >
-                        Segera Hadir
-                      </button>
-                    )
-                  )}
+                  <div className={`w-20 h-20 ${module.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg border-2 border-red-200/30`}>
+                     <Icon className="w-10 h-10 text-white" />
+                   </div>
+                   
+                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300">
+                     {module.title}
+                   </h3>
+                   
+                   <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                     {module.description}
+                   </p>
+                   
+                   <div className="space-y-3">
+                     {module.features.map((feature, featureIndex) => (
+                       <div key={featureIndex} className="flex items-center text-gray-700">
+                         <div className={`w-3 h-3 bg-gradient-to-r ${module.color} rounded-full mr-3 flex-shrink-0 shadow-sm border border-red-200/50`}></div>
+                         <span className="text-sm font-medium">{feature}</span>
+                       </div>
+                     ))}
+                   </div>
+                   
+                   {!module.hideButton && (
+                     module.url ? (
+                       <a
+                         href={module.url}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className={`mt-8 block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
+                       >
+                         Buka Modul
+                       </a>
+                     ) : (
+                       <button
+                         disabled
+                         className={`mt-8 w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30`}
+                       >
+                         Segera Hadir
+                       </button>
+                     )
+                   )}
                  </div>
               </div>
             );
@@ -259,7 +261,7 @@ export default function LayananSection() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
                 Integrasi Sistem Eksternal
               </span>
             </h3>
@@ -274,9 +276,9 @@ export default function LayananSection() {
               return (
                 <div 
                   key={index}
-                  className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-indigo-100"
+                  className="group bg-red-50/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-red-200/60"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 border-2 border-red-200/40 shadow-lg">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-3">{integration.title}</h4>
@@ -288,7 +290,7 @@ export default function LayananSection() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-12 md:p-16 text-center text-white shadow-2xl">
+        <div className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-3xl p-12 md:p-16 text-center text-white shadow-2xl">
           <div className="max-w-4xl mx-auto">
             <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8">
               <Network className="w-12 h-12 text-white" />
@@ -308,7 +310,7 @@ export default function LayananSection() {
                 href="https://anggota.kdmp.id/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-white text-red-600 hover:bg-red-50 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Mulai Sekarang
               </a>
@@ -322,7 +324,7 @@ export default function LayananSection() {
             {[...Array(7)].map((_, i) => (
               <div 
                 key={i} 
-                className="w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full animate-pulse"
+                className="w-4 h-4 bg-gradient-to-r from-red-500 to-red-700 rounded-full animate-pulse"
                 style={{ animationDelay: `${i * 0.3}s` }}
               ></div>
             ))}

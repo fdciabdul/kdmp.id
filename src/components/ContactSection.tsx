@@ -36,13 +36,6 @@ export default function ContactSection() {
       color: 'from-green-500 to-emerald-600'
     },
     {
-      icon: Users,
-      title: 'Konsultasi Gratis',
-      description: 'Dapatkan konsultasi gratis tentang layanan koperasi',
-      action: 'Jadwalkan Konsultasi',
-      color: 'from-blue-500 to-indigo-600'
-    },
-    {
       icon: Building2,
       title: 'Kunjungi Kantor',
       description: 'Datang langsung ke kantor kami untuk pelayanan terbaik',
@@ -122,7 +115,7 @@ export default function ContactSection() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {quickActions.map((action, index) => {
               const Icon = action.icon;
               return (
