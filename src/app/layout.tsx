@@ -5,10 +5,10 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Koperasi Sejahtera Bersama - Membangun Kesejahteraan Bersama',
+  title: 'Koperasi Desa Merah Putih',
   description: 'Koperasi terpercaya sejak 1995 yang melayani masyarakat pedesaan dengan berbagai layanan keuangan dan pemberdayaan ekonomi.',
   keywords: 'koperasi, simpan pinjam, kredit, investasi, pedesaan, kesejahteraan, ekonomi',
-  authors: [{ name: 'Koperasi Sejahtera Bersama' }],
+  authors: [{ name: 'Koperasi Desa Merah Putih ' }],
 }
 
 export const viewport = {
