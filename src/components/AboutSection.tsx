@@ -99,9 +99,7 @@ export default function AboutSection() {
                     {value.description}
                   </p>
                   
-                  {/* Decorative quote marks */}
-                  <div className="absolute top-8 left-8 text-6xl text-red-200 font-serif">"</div>
-                  <div className="absolute bottom-8 right-8 text-6xl text-red-200 font-serif rotate-180">"</div>
+
                 </div>
               </div>
             );
