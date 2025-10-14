@@ -303,13 +303,15 @@ export default function LayananSection() {
               Akses semua modul digital dan mulai transformasi bisnis Anda hari ini.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <div className="flex justify-center">
+              <a 
+                href="https://anggota.kdmp.id/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
                 Mulai Sekarang
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105">
-                Demo Platform
-              </button>
+              </a>
             </div>
           </div>
         </div>

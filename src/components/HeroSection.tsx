@@ -51,7 +51,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <p className="text-lg sm:text-xl text-gray-100 leading-relaxed max-w-4xl mx-auto drop-shadow-lg">
                 Bersama <span className="text-red-300 font-semibold">83.762 Koperasi Desa Merah Putih</span> di seluruh Indonesia, 
-                kkami menghadirkan ekosistem digital untuk memperkuat ekonomi rakyat melalui ketahanan pangan, ketahanan kesehatan, 
+                kami menghadirkan ekosistem digital untuk memperkuat ekonomi rakyat melalui ketahanan pangan, ketahanan kesehatan, 
                 dan tata kelola koperasi modern yang transparan dan berkeadilan.
               </p>
             </div>
