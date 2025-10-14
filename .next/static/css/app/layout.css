@@ -836,11 +836,11 @@ body {
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-.cursor-pointer {
-  cursor: pointer;
-}
 .cursor-not-allowed {
   cursor: not-allowed;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .scroll-mt-24 {
   scroll-margin-top: 6rem;
@@ -1512,11 +1512,11 @@ body {
 .opacity-5 {
   opacity: 0.05;
 }
-.opacity-90 {
-  opacity: 0.9;
-}
 .opacity-60 {
   opacity: 0.6;
+}
+.opacity-90 {
+  opacity: 0.9;
 }
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
