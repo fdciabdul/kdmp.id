@@ -59,12 +59,20 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="pt-4 lg:pt-6">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-red-600 hover:bg-red-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                <a
+                  href="https://koperasi-dev.kdmp.id/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                >
                   Gabung Sekarang
-                </button>
-                <button className="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                </a>
+                <a
+                  href="#services"
+                  className="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                >
                   Pelajari Lebih Lanjut
-                </button>
+                </a>
               </div>
             </div>
           </div>
