@@ -131,7 +131,7 @@ export default function LayananSection() {
       color: 'from-teal-500 to-green-600',
       bgColor: 'from-teal-50 to-green-50',
       iconBg: 'bg-gradient-to-r from-teal-500 to-green-600',
-      hideButton: true
+      hideButton: false
     }
   ];
 
@@ -310,7 +310,7 @@ export default function LayananSection() {
                         ) : (
                           <button
                             disabled
-                            className={`mt-auto w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30`}
+                            className={`mt-auto w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
                           >
                             Segera Hadir
                           </button>
