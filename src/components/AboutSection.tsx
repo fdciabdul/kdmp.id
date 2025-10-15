@@ -37,14 +37,13 @@ export default function AboutSection() {
             <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
               Tentang
             </span>{' '}
-            <span className="text-gray-900">Koperasi Kami</span>
+            <span className="text-gray-900">Koperasi Merah Putih</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
             <span className="font-semibold text-red-700">Koperasi Merah Putih (KDMP & KKMP)</span> beroperasi berdasarkan 
             <span className="font-semibold text-red-700"> Instruksi Presiden Nomor 9 Tahun 2025</span> dengan 
-            dukungan dari 16 Kementerian. Dikelola oleh PT Subaga Inti Milenia (Subaga Group) sebagai holding, 
-            menaungi 13 perusahaan, 31 HAKI, dan lebih dari 300 klien di 137 kota.
+            dukungan dari 16 Kementerian.
           </p>
         </div>
 

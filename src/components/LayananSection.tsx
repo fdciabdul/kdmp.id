@@ -194,15 +194,17 @@ export default function LayananSection() {
           </p>
         </div>
 
-        {/* Digital Modules Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
-          {digitalModules.map((module, index) => {
-            const Icon = module.icon;
-            return (
-              <div 
-                 key={index}
-                 className="group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden"
-               >
+        {/* Digital Modules Grid - 2 Rows Layout */}
+        <div className="space-y-8 mb-20">
+          {/* Baris Pertama - 4 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {digitalModules.slice(0, 4).map((module, index) => {
+              const Icon = module.icon;
+              return (
+                <div 
+                   key={index}
+                   className="group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden h-full flex flex-col"
+                 >
                  {/* Decorative background pattern dengan aksen merah-putih */}
                  <div className="absolute inset-0 opacity-20">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-200 to-red-300 rounded-full blur-xl"></div>
@@ -255,6 +257,70 @@ export default function LayananSection() {
               </div>
             );
           })}
+          </div>
+          
+          {/* Baris Kedua - 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
+            {digitalModules.slice(4, 7).map((module, index) => {
+              const Icon = module.icon;
+              return (
+                <div 
+                   key={index + 4}
+                   className="group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden h-full flex flex-col"
+                 >
+                   {/* Decorative background pattern dengan aksen merah-putih */}
+                   <div className="absolute inset-0 opacity-20">
+                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-200 to-red-300 rounded-full blur-xl"></div>
+                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-red-100 to-red-200 rounded-full blur-lg"></div>
+                     <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-red-200/40 rounded-full blur-md -translate-x-1/2 -translate-y-1/2"></div>
+                   </div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                     <div className={`w-20 h-20 ${module.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg border-2 border-red-200/30`}>
+                        <Icon className="w-10 h-10 text-white" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300">
+                        {module.title}
+                      </h3>
+                      
+                      <p className="text-gray-700 mb-6 leading-relaxed font-medium flex-grow">
+                        {module.description}
+                      </p>
+                      
+                      <div className="space-y-3 mb-6">
+                        {module.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center text-gray-700">
+                            <div className={`w-3 h-3 bg-gradient-to-r ${module.color} rounded-full mr-3 flex-shrink-0 shadow-sm border border-red-200/50`}></div>
+                            <span className="text-sm font-medium">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {!module.hideButton && (
+                        module.url ? (
+                          <a
+                            href={module.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`mt-auto block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
+                          >
+                            Buka Modul
+                          </a>
+                        ) : (
+                          <button
+                            disabled
+                            className={`mt-auto w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30`}
+                          >
+                            Segera Hadir
+                          </button>
+                        )
+                      )}
+                    </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Integration Section */}
