@@ -46,10 +46,58 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
-      {/* Background with gradient and decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-red-50"></div>
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-red-100/30 to-pink-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100/30 to-indigo-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      {/* Enhanced Red and White Background Design */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-red-100"></div>
+      
+      {/* Multi-layered Gradient System for Enhanced Depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-500/12 via-transparent to-red-600/8"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-red-200/15 via-transparent to-white/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-bl from-red-300/10 via-white/20 to-red-100/25"></div>
+      
+      {/* Sophisticated Decorative Elements with Animation */}
+      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-gradient-to-br from-red-300/30 via-red-100/20 to-white/25 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 animate-pulse"></div>
+      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-red-400/25 via-white/20 to-red-50/30 rounded-full blur-2xl translate-x-1/4 animate-pulse" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-0 left-1/4 w-[480px] h-[480px] bg-gradient-to-tr from-white/35 via-red-200/25 to-red-300/20 rounded-full blur-3xl translate-y-1/3 animate-pulse" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-red-500/22 via-red-100/30 to-white/25 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+      
+      {/* Enhanced Geometric Accents with Sophisticated Styling */}
+      <div className="absolute top-16 right-16 w-48 h-48 border-2 border-red-300/40 rounded-full opacity-70 animate-spin" style={{animationDuration: '20s'}}></div>
+      <div className="absolute top-20 right-20 w-40 h-40 border border-red-200/50 rounded-full opacity-60"></div>
+      <div className="absolute bottom-20 left-12 w-36 h-36 border-2 border-red-400/35 rotate-45 rounded-3xl opacity-60 animate-pulse"></div>
+      <div className="absolute bottom-24 left-16 w-28 h-28 border border-red-300/40 rotate-45 rounded-2xl opacity-50"></div>
+      <div className="absolute top-1/3 left-1/5 w-24 h-24 bg-gradient-to-br from-red-200/50 to-white/40 rounded-full opacity-80 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute bottom-1/3 right-1/4 w-28 h-28 bg-gradient-to-tl from-white/45 to-red-200/40 rounded-2xl rotate-12 opacity-70 animate-pulse" style={{animationDelay: '2.5s'}}></div>
+      
+      {/* Advanced Flowing Wave Pattern with Enhanced Gradients */}
+      <div className="absolute inset-0 opacity-25">
+        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+          <path d="M0,350 Q200,300 400,350 T800,350 Q1000,300 1200,350 V800 H0 Z" fill="url(#enhancedRedGradient)" opacity="0.15"/>
+          <path d="M0,420 Q300,370 600,420 T1200,420 V800 H0 Z" fill="url(#enhancedWhiteGradient)" opacity="0.2"/>
+          <path d="M0,480 Q150,450 300,480 T600,480 Q750,450 900,480 T1200,480 V800 H0 Z" fill="url(#accentGradient)" opacity="0.12"/>
+          <defs>
+            <linearGradient id="enhancedRedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#fca5a5" />
+              <stop offset="30%" stopColor="#ffffff" />
+              <stop offset="70%" stopColor="#f87171" />
+              <stop offset="100%" stopColor="#fecaca" />
+            </linearGradient>
+            <linearGradient id="enhancedWhiteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="25%" stopColor="#fef2f2" />
+              <stop offset="75%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#fef7f7" />
+            </linearGradient>
+            <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#fee2e2" />
+              <stop offset="50%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#fecaca" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
+      {/* Radial Gradient Overlay for Enhanced Visual Appeal */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-red-50/20 to-red-100/30 opacity-60"></div>
       
       <div className="container-max section-padding relative z-10">
         {/* Section Header */}
