@@ -1,6 +1,6 @@
 'use client';
 
-import { Building2, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Building2, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const handleHashClick = (
@@ -33,12 +33,6 @@ export default function Footer() {
     { name: 'Investasi', href: '#services' },
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Youtube, href: '#', name: 'YouTube' },
-  ];
-
   return (
     <footer className="bg-gradient-to-br from-red-700 via-red-600 to-red-400 text-white relative overflow-hidden">
       {/* Decorative elements */}
@@ -67,7 +61,14 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-white/80 flex-shrink-0" />
-                <span className="text-white/90">Menara Palma Jalan H.R Rasuna Said Lantai 12 Jakarta 12710</span>
+                <a 
+                  href="https://share.google/7k2K3LUvZOHvuxCa9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-red-300 transition-colors duration-300 cursor-pointer"
+                >
+                  Menara Palma Jalan H.R Rasuna Said Lantai 12 Jakarta 12710
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-white/80 flex-shrink-0" />
@@ -82,7 +83,12 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-white/80 flex-shrink-0" />
-                <span className="text-white/90">admin@kdmp.id</span>
+                <a 
+                  href="mailto:admin@subagamilenia.com"
+                  className="text-white/90 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                >
+                  admin@subagamilenia.com
+                </a>
               </div>
             </div>
           </div>
@@ -123,31 +129,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Media & Copyright */}
+        {/* Copyright */}
         <div className="border-t border-white/20 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-4 mb-4 md:mb-0">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/10"
-                    aria-label={social.name}
-                  >
-                    <Icon className="w-5 h-5 text-white" />
-                  </a>
-                );
-              })}
-            </div>
-            
-            <div className="text-center md:text-right">
+          <div className="flex justify-center items-center">
+            <div className="text-center">
               <p className="text-white/80 text-sm drop-shadow-sm">
                 © {new Date().getFullYear()} Koperasi Desa Merah Putih. Semua hak dilindungi.
-              </p>
-              <p className="text-white/60 text-xs mt-1 drop-shadow-sm">
-                Dibuat dengan ❤️ untuk kemajuan koperasi Indonesia
               </p>
             </div>
           </div>

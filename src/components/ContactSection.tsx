@@ -10,7 +10,9 @@ export default function ContactSection() {
       primary: 'Menara Palma Jalan H.R Rasuna Said Lantai 12',
       secondary: 'Kecamatan Setiabudi, Kota Jakarta Selatan',
       tertiary: 'Jakarta 12710',
-      color: 'from-red-500 to-pink-500'
+      color: 'from-red-500 to-pink-500',
+      link: 'https://share.google/7k2K3LUvZOHvuxCa9',
+      linkType: 'external'
     },
     {
       icon: Phone,
@@ -22,8 +24,10 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: 'Email Resmi',
-      primary: 'admin@kdmp.id',
-      color: 'from-blue-500 to-cyan-500'
+      primary: 'admin@subagamilenia.com',
+      color: 'from-blue-500 to-cyan-500',
+      link: 'mailto:admin@subagamilenia.com',
+      linkType: 'email'
     }
   ];
 
@@ -120,11 +124,8 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-3 gap-8 mb-20 max-w-5xl mx-auto">
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
-            return (
-              <div 
-                key={index} 
-                className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20"
-              >
+            const CardContent = (
+              <>
                 {/* Gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${info.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`}></div>
                 
@@ -147,6 +148,29 @@ export default function ContactSection() {
                 
                 {/* Decorative corner */}
                 <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${info.color} opacity-10 rounded-bl-full`}></div>
+              </>
+            );
+
+            if (info.link) {
+              return (
+                <a
+                  key={index}
+                  href={info.link}
+                  target={info.linkType === 'external' ? '_blank' : undefined}
+                  rel={info.linkType === 'external' ? 'noopener noreferrer' : undefined}
+                  className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 block cursor-pointer"
+                >
+                  {CardContent}
+                </a>
+              );
+            }
+
+            return (
+              <div 
+                key={index} 
+                className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20"
+              >
+                {CardContent}
               </div>
             );
           })}

@@ -30,21 +30,64 @@ import {
 } from 'lucide-react';
 
 export default function LayananSection() {
+  // Function to get button colors based on module title
+  const getButtonColors = (moduleTitle: string, buttonType: 'video' | 'manual') => {
+    const colors = {
+      'Modul Point of Sales (POS)': {
+        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
+      },
+      'Modul eLogistik & Inventory': {
+        video: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' },
+        manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
+      },
+      'Modul Keanggotaan': {
+        video: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' },
+        manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
+      },
+      'Modul Tele-Health Services': {
+        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        manual: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' }
+      },
+      'Modul Gerai Klinik & Obat': {
+        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        manual: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' }
+      },
+      'Modul Keuangan': {
+        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
+      }
+    };
+
+    const moduleColors = colors[moduleTitle as keyof typeof colors];
+    if (moduleColors) {
+      return moduleColors[buttonType];
+    }
+    
+    // Default colors if module not found
+    return {
+      normal: 'from-gray-300 to-gray-400',
+      hover: 'hover:from-red-500 hover:to-red-600',
+      border: 'border-gray-300/30 hover:border-red-300/30'
+    };
+  };
+
   const digitalModules = [
     {
       icon: Wheat,
-      title: 'Modul Bank Pangan',
-      description: 'Sistem perbankan khusus untuk sektor pangan dengan teknologi terdepan.',
+      title: 'Modul Point of Sales (POS)',
+      description: 'Sistem Point of Sales modern untuk sektor pangan dengan teknologi terintegrasi.',
       features: [
-        'Simpanan & Pinjaman Digital',
-        'Pencatatan Hasil Tani Otomatis', 
+        'Transaksi Penjualan & Pembelian Digital',
+        'Manajemen Stok Otomatis', 
         'Integrasi QRIS, Transfer & E-Wallet',
-        'Scoring Kredit Berbasis AI'
+
       ],
       color: 'from-green-500 to-emerald-600',
       bgColor: 'from-green-50 to-emerald-50',
       iconBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
-      url: 'https://koperasi-merahputih-jateng-dev.transmedika.co.id/'
+      url: 'https://pos.kdmp.id/',
+      manualBookUrl: 'https://drive.google.com/file/d/1a2_z1bjROiTeKUzQQJA6s54SA3aByYeZ/view?usp=drive_link'
     },
     {
       icon: Truck,
@@ -59,7 +102,7 @@ export default function LayananSection() {
       color: 'from-blue-500 to-cyan-600',
       bgColor: 'from-blue-50 to-cyan-50',
       iconBg: 'bg-gradient-to-r from-blue-500 to-cyan-600',
-      url: 'https://devprem.gudang2go.com/kdmp',
+      url: 'https://gudang.kdmp.id/',
       videoTutorialUrl: 'https://drive.google.com/drive/folders/1-tF3KpxqLX7aBeoydyHYcnGmx1rDv0IM?usp=sharing',
       manualBookUrl: 'https://drive.google.com/file/d/1z7W4ietNdw5BEnYM0xO6o4tJbVW1KRJy/view?usp=sharing'
     },
@@ -78,7 +121,7 @@ export default function LayananSection() {
       iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600',
       url: 'https://anggota.kdmp.id/',
       videoTutorialUrl: 'https://drive.google.com/file/d/1EG9Tij27XDQlLzeUFZnIZClHHvQTFRk-/view?usp=sharing',
-      manualBookUrl: 'https://drive.google.com/drive/folders/1CFQPfwe2SWEu0GxdUvakn5KsucIo481B?usp=sharing'
+      manualBookUrl: 'https://drive.google.com/file/d/1vbTEFAJTiYNK5sXF3SXvikU-FyeO_sLP/view?usp=sharing'
     },
     {
       icon: Stethoscope,
@@ -93,7 +136,7 @@ export default function LayananSection() {
       color: 'from-red-500 to-pink-600',
       bgColor: 'from-red-50 to-pink-50',
       iconBg: 'bg-gradient-to-r from-red-500 to-pink-600',
-      url: 'http://dokter-jateng-sehat-dev.transmedika.co.id'
+      url: 'http://dokter.kdmp.id'
     },
     {
       icon: Building2,
@@ -108,7 +151,7 @@ export default function LayananSection() {
       color: 'from-orange-500 to-amber-600',
       bgColor: 'from-orange-50 to-amber-50',
       iconBg: 'bg-gradient-to-r from-orange-500 to-amber-600',
-      url: 'http://mobil-klinik-jateng-sehat-dev.transmedika.co.id'
+      url: 'http://mobile-klinik.kdmp.id/'
     },
     {
       icon: Calculator,
@@ -123,8 +166,8 @@ export default function LayananSection() {
       color: 'from-indigo-500 to-blue-600',
       bgColor: 'from-indigo-50 to-blue-50',
       iconBg: 'bg-gradient-to-r from-indigo-500 to-blue-600',
-      url: 'https://koperasi-dev.kdmp.id/',
-      manualBookUrl: 'https://drive.google.com/drive/folders/1YyhXlhJsslPckNnCWE4GPC58W8S64tJV?usp=sharing'
+      url: 'https://koperasi.kdmp.id/',
+      manualBookUrl: 'https://drive.google.com/file/d/1AdVD6-Sg651f0wjyT8ywWENYML0M6nab/view?usp=drive_link'
     },
     {
       icon: BarChart3,
@@ -286,7 +329,7 @@ export default function LayananSection() {
                            ) : (
                              <button
                                disabled
-                               className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30 text-sm`}
+                               className={`w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-gray-400/30 text-sm`}
                              >
                                Segera Hadir
                              </button>
@@ -299,13 +342,13 @@ export default function LayananSection() {
                                  href={module.videoTutorialUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
-                                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30"
+                                 className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'video').normal} ${getButtonColors(module.title, 'video').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'video').border}`}
                                >
                                  <Play className="w-4 h-4" />
                                  <span>Video Tutorial</span>
                                </a>
                              ) : (
-                               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30">
+                               <button className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'video').normal} ${getButtonColors(module.title, 'video').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'video').border}`}>
                                  <Play className="w-4 h-4" />
                                  <span>Video Tutorial</span>
                                </button>
@@ -315,13 +358,13 @@ export default function LayananSection() {
                                  href={module.manualBookUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
-                                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30"
+                                 className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'manual').normal} ${getButtonColors(module.title, 'manual').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'manual').border}`}
                                >
                                  <BookOpen className="w-4 h-4" />
                                  <span>Manual Book</span>
                                </a>
                              ) : (
-                               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30">
+                               <button className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'manual').normal} ${getButtonColors(module.title, 'manual').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'manual').border}`}>
                                  <BookOpen className="w-4 h-4" />
                                  <span>Manual Book</span>
                                </button>
@@ -383,7 +426,7 @@ export default function LayananSection() {
                           {module.showOnlySegeraHadir ? (
                             <button
                               disabled
-                              className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
+                              className={`w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
                             >
                               Segera Hadir
                             </button>
@@ -402,47 +445,47 @@ export default function LayananSection() {
                               ) : (
                                 <button
                                   disabled
-                                  className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
+                                  className={`w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
                                 >
                                   Segera Hadir
                                 </button>
                               )}
                               
                               {/* Video Tutorial and Manual Book buttons */}
-                              <div className="grid grid-cols-2 gap-3">
-                                {module.videoTutorialUrl ? (
-                                  <a
-                                    href={module.videoTutorialUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30"
-                                  >
-                                    <Play className="w-4 h-4" />
-                                    <span>Video Tutorial</span>
-                                  </a>
-                                ) : (
-                                  <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30">
-                                    <Play className="w-4 h-4" />
-                                    <span>Video Tutorial</span>
-                                  </button>
-                                )}
-                                {module.manualBookUrl ? (
-                                  <a
-                                    href={module.manualBookUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30"
-                                  >
-                                    <BookOpen className="w-4 h-4" />
-                                    <span>Manual Book</span>
-                                  </a>
-                                ) : (
-                                  <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30">
-                                    <BookOpen className="w-4 h-4" />
-                                    <span>Manual Book</span>
-                                  </button>
-                                )}
-                              </div>
+                           <div className="grid grid-cols-2 gap-3">
+                             {module.videoTutorialUrl ? (
+                               <a
+                                 href={module.videoTutorialUrl}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'video').normal} ${getButtonColors(module.title, 'video').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'video').border}`}
+                               >
+                                 <Play className="w-4 h-4" />
+                                 <span>Video Tutorial</span>
+                               </a>
+                             ) : (
+                               <button className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'video').normal} ${getButtonColors(module.title, 'video').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'video').border}`}>
+                                 <Play className="w-4 h-4" />
+                                 <span>Video Tutorial</span>
+                               </button>
+                             )}
+                             {module.manualBookUrl ? (
+                               <a
+                                 href={module.manualBookUrl}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'manual').normal} ${getButtonColors(module.title, 'manual').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'manual').border}`}
+                               >
+                                 <BookOpen className="w-4 h-4" />
+                                 <span>Manual Book</span>
+                               </a>
+                             ) : (
+                               <button className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'manual').normal} ${getButtonColors(module.title, 'manual').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'manual').border}`}>
+                                 <BookOpen className="w-4 h-4" />
+                                 <span>Manual Book</span>
+                               </button>
+                             )}
+                           </div>
                             </>
                           )}
                         </div>
