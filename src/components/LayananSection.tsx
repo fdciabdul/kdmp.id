@@ -23,7 +23,10 @@ import {
   DollarSign,
   FileText,
   PieChart,
-  Globe
+  Globe,
+  BookOpen,
+  Play,
+  GraduationCap
 } from 'lucide-react';
 
 export default function LayananSection() {
@@ -56,7 +59,9 @@ export default function LayananSection() {
       color: 'from-blue-500 to-cyan-600',
       bgColor: 'from-blue-50 to-cyan-50',
       iconBg: 'bg-gradient-to-r from-blue-500 to-cyan-600',
-      url: 'https://devprem.gudang2go.com/kdmp'
+      url: 'https://devprem.gudang2go.com/kdmp',
+      videoTutorialUrl: 'https://drive.google.com/drive/folders/1-tF3KpxqLX7aBeoydyHYcnGmx1rDv0IM?usp=sharing',
+      manualBookUrl: 'https://drive.google.com/file/d/1z7W4ietNdw5BEnYM0xO6o4tJbVW1KRJy/view?usp=sharing'
     },
     {
       icon: Users,
@@ -71,7 +76,9 @@ export default function LayananSection() {
       color: 'from-purple-500 to-violet-600',
       bgColor: 'from-purple-50 to-violet-50',
       iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600',
-      url: 'https://anggota.kdmp.id/'
+      url: 'https://anggota.kdmp.id/',
+      videoTutorialUrl: 'https://drive.google.com/file/d/1EG9Tij27XDQlLzeUFZnIZClHHvQTFRk-/view?usp=sharing',
+      manualBookUrl: 'https://drive.google.com/drive/folders/1CFQPfwe2SWEu0GxdUvakn5KsucIo481B?usp=sharing'
     },
     {
       icon: Stethoscope,
@@ -116,7 +123,8 @@ export default function LayananSection() {
       color: 'from-indigo-500 to-blue-600',
       bgColor: 'from-indigo-50 to-blue-50',
       iconBg: 'bg-gradient-to-r from-indigo-500 to-blue-600',
-      url: 'https://koperasi-dev.kdmp.id/'
+      url: 'https://koperasi-dev.kdmp.id/',
+      manualBookUrl: 'https://drive.google.com/drive/folders/1YyhXlhJsslPckNnCWE4GPC58W8S64tJV?usp=sharing'
     },
     {
       icon: BarChart3,
@@ -131,7 +139,24 @@ export default function LayananSection() {
       color: 'from-teal-500 to-green-600',
       bgColor: 'from-teal-50 to-green-50',
       iconBg: 'bg-gradient-to-r from-teal-500 to-green-600',
-      hideButton: false
+      hideButton: false,
+      showOnlySegeraHadir: true
+    },
+    {
+      icon: GraduationCap,
+      title: 'Modul LMS',
+      description: 'Platform pembelajaran digital dengan sertifikasi dan monitoring otomatis.',
+      features: [
+        'Kelas Online & Materi Interaktif',
+        'Sistem Sertifikasi & Penilaian Otomatis',
+        'Monitoring Kemajuan Peserta',
+        'Integrasi Program Pelatihan Desa'
+      ],
+      color: 'from-yellow-500 to-orange-600',
+      bgColor: 'from-yellow-50 to-orange-50',
+      iconBg: 'bg-gradient-to-r from-yellow-500 to-orange-600',
+      hideButton: false,
+      showOnlySegeraHadir: true
     }
   ];
 
@@ -203,7 +228,9 @@ export default function LayananSection() {
               return (
                 <div 
                    key={index}
-                   className="group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden h-full flex flex-col"
+                   className={`group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden flex flex-col ${
+                     module.showOnlySegeraHadir ? 'h-auto' : 'h-full'
+                   }`}
                  >
                  {/* Decorative background pattern dengan aksen merah-putih */}
                  <div className="absolute inset-0 opacity-20">
@@ -217,7 +244,7 @@ export default function LayananSection() {
                      <Icon className="w-8 h-8 text-white" />
                    </div>
                    
-                   <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-red-700 transition-colors duration-300">
+                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300 leading-tight">
                      {module.title}
                    </h3>
                    
@@ -225,7 +252,7 @@ export default function LayananSection() {
                      {module.description}
                    </p>
                    
-                   <div className="space-y-2 mb-4">
+                   <div className={`space-y-2 ${module.showOnlySegeraHadir ? 'mb-6' : 'mb-4'}`}>
                      {module.features.map((feature, featureIndex) => (
                        <div key={featureIndex} className="flex items-center text-gray-700">
                          <div className={`w-2 h-2 bg-gradient-to-r ${module.color} rounded-full mr-2 flex-shrink-0 shadow-sm border border-red-200/50`}></div>
@@ -235,23 +262,74 @@ export default function LayananSection() {
                    </div>
                    
                    {!module.hideButton && (
-                     module.url ? (
-                       <a
-                         href={module.url}
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         className={`mt-auto block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
-                       >
-                         Buka Modul
-                       </a>
-                     ) : (
-                       <button
-                         disabled
-                         className={`mt-auto w-full bg-gradient-to-r ${module.color} text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30 text-sm`}
-                       >
-                         Segera Hadir
-                       </button>
-                     )
+                     <div className={`${module.showOnlySegeraHadir ? 'mt-0' : 'mt-auto'} space-y-3`}>
+                       {/* Show only Segera Hadir button for specific modules */}
+                       {module.showOnlySegeraHadir ? (
+                         <button
+                           disabled
+                           className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30 text-sm`}
+                         >
+                           Segera Hadir
+                         </button>
+                       ) : (
+                         <>
+                           {/* Original Buka Modul button */}
+                           {module.url ? (
+                             <a
+                               href={module.url}
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className={`block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
+                             >
+                               Buka Modul
+                             </a>
+                           ) : (
+                             <button
+                               disabled
+                               className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-red-200/30 text-sm`}
+                             >
+                               Segera Hadir
+                             </button>
+                           )}
+                           
+                           {/* Video Tutorial and Manual Book buttons */}
+                           <div className="grid grid-cols-2 gap-3">
+                             {module.videoTutorialUrl ? (
+                               <a
+                                 href={module.videoTutorialUrl}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30"
+                               >
+                                 <Play className="w-4 h-4" />
+                                 <span>Video Tutorial</span>
+                               </a>
+                             ) : (
+                               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30">
+                                 <Play className="w-4 h-4" />
+                                 <span>Video Tutorial</span>
+                               </button>
+                             )}
+                             {module.manualBookUrl ? (
+                               <a
+                                 href={module.manualBookUrl}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30"
+                               >
+                                 <BookOpen className="w-4 h-4" />
+                                 <span>Manual Book</span>
+                               </a>
+                             ) : (
+                               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30">
+                                 <BookOpen className="w-4 h-4" />
+                                 <span>Manual Book</span>
+                               </button>
+                             )}
+                           </div>
+                         </>
+                       )}
+                     </div>
                    )}
                  </div>
               </div>
@@ -259,14 +337,16 @@ export default function LayananSection() {
           })}
           </div>
           
-          {/* Baris Kedua - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
-            {digitalModules.slice(4, 7).map((module, index) => {
+          {/* Baris Kedua - 4 Cards (termasuk LMS) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {digitalModules.slice(4, 8).map((module, index) => {
               const Icon = module.icon;
               return (
                 <div 
                    key={index + 4}
-                   className="group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden h-full flex flex-col"
+                   className={`group relative bg-red-50/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-red-200/60 overflow-hidden flex flex-col ${
+                     module.showOnlySegeraHadir ? 'h-auto' : 'h-full'
+                   }`}
                  >
                    {/* Decorative background pattern dengan aksen merah-putih */}
                    <div className="absolute inset-0 opacity-20">
@@ -280,7 +360,7 @@ export default function LayananSection() {
                         <Icon className="w-10 h-10 text-white" />
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300 leading-tight">
                         {module.title}
                       </h3>
                       
@@ -288,7 +368,7 @@ export default function LayananSection() {
                         {module.description}
                       </p>
                       
-                      <div className="space-y-3 mb-6">
+                      <div className={`space-y-3 ${module.showOnlySegeraHadir ? 'mb-6' : 'mb-6'}`}>
                         {module.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center text-gray-700">
                             <div className={`w-3 h-3 bg-gradient-to-r ${module.color} rounded-full mr-3 flex-shrink-0 shadow-sm border border-red-200/50`}></div>
@@ -298,23 +378,74 @@ export default function LayananSection() {
                       </div>
                       
                       {!module.hideButton && (
-                        module.url ? (
-                          <a
-                            href={module.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`mt-auto block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
-                          >
-                            Buka Modul
-                          </a>
-                        ) : (
-                          <button
-                            disabled
-                            className={`mt-auto w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
-                          >
-                            Segera Hadir
-                          </button>
-                        )
+                        <div className={`${module.showOnlySegeraHadir ? 'mt-0' : 'mt-auto'} space-y-3`}>
+                          {/* Show only Segera Hadir button for specific modules */}
+                          {module.showOnlySegeraHadir ? (
+                            <button
+                              disabled
+                              className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
+                            >
+                              Segera Hadir
+                            </button>
+                          ) : (
+                            <>
+                              {/* Original Buka Modul button */}
+                              {module.url ? (
+                                <a
+                                  href={module.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={`block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
+                                >
+                                  Buka Modul
+                                </a>
+                              ) : (
+                                <button
+                                  disabled
+                                  className={`w-full bg-gradient-to-r ${module.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 opacity-70 cursor-not-allowed border-2 border-gray-300/50 shadow-2xl shadow-gray-400/30 hover:shadow-2xl hover:shadow-gray-500/40`}
+                                >
+                                  Segera Hadir
+                                </button>
+                              )}
+                              
+                              {/* Video Tutorial and Manual Book buttons */}
+                              <div className="grid grid-cols-2 gap-3">
+                                {module.videoTutorialUrl ? (
+                                  <a
+                                    href={module.videoTutorialUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30"
+                                  >
+                                    <Play className="w-4 h-4" />
+                                    <span>Video Tutorial</span>
+                                  </a>
+                                ) : (
+                                  <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-red-300/30">
+                                    <Play className="w-4 h-4" />
+                                    <span>Video Tutorial</span>
+                                  </button>
+                                )}
+                                {module.manualBookUrl ? (
+                                  <a
+                                    href={module.manualBookUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30"
+                                  >
+                                    <BookOpen className="w-4 h-4" />
+                                    <span>Manual Book</span>
+                                  </a>
+                                ) : (
+                                  <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg border border-gray-400/30">
+                                    <BookOpen className="w-4 h-4" />
+                                    <span>Manual Book</span>
+                                  </button>
+                                )}
+                              </div>
+                            </>
+                          )}
+                        </div>
                       )}
                     </div>
                 </div>
