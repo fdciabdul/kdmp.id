@@ -46,11 +46,11 @@ export default function LayananSection() {
         manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
       },
       'Modul Tele-Health Services': {
-        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        video: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' },
         manual: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' }
       },
       'Modul Gerai Klinik & Obat': {
-        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        video: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' },
         manual: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' }
       },
       'Modul Keuangan': {
@@ -137,7 +137,8 @@ export default function LayananSection() {
       color: 'from-red-500 to-pink-600',
       bgColor: 'from-red-50 to-pink-50',
       iconBg: 'bg-gradient-to-r from-red-500 to-pink-600',
-      url: 'http://dokter.kdmp.id'
+      url: 'http://dokter.kdmp.id',
+      videoTutorialUrl: 'https://drive.google.com/file/d/1jD01k8ISB3Uljm5HelJsaMa5As1G1-1l/view?usp=drive_link'
     },
     {
       icon: Building2,
@@ -152,7 +153,8 @@ export default function LayananSection() {
       color: 'from-orange-500 to-amber-600',
       bgColor: 'from-orange-50 to-amber-50',
       iconBg: 'bg-gradient-to-r from-orange-500 to-amber-600',
-      url: 'http://mobile-klinik.kdmp.id/'
+      url: 'http://mobile-klinik.kdmp.id/',
+      videoTutorialUrl: 'https://drive.google.com/drive/folders/1TdlkUgdsAlSktS9akV_UDesnlT4rlgJO?usp=drive_link'
     },
     {
       icon: Calculator,
