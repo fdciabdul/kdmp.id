@@ -34,7 +34,7 @@ export default function LayananSection() {
   const getButtonColors = (moduleTitle: string, buttonType: 'video' | 'manual') => {
     const colors = {
       'Modul Point of Sales (POS)': {
-        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        video: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' },
         manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
       },
       'Modul eLogistik & Inventory': {
@@ -87,6 +87,7 @@ export default function LayananSection() {
       bgColor: 'from-green-50 to-emerald-50',
       iconBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
       url: 'https://pos.kdmp.id/',
+      videoTutorialUrl: 'https://drive.google.com/file/d/19cxd9IoPR2GgKvFJl6vlhD7GKOKBt4x4/view?usp=drive_link',
       manualBookUrl: 'https://drive.google.com/file/d/1a2_z1bjROiTeKUzQQJA6s54SA3aByYeZ/view?usp=drive_link'
     },
     {
