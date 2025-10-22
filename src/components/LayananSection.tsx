@@ -54,7 +54,7 @@ export default function LayananSection() {
         manual: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' }
       },
       'Modul Keuangan': {
-        video: { normal: 'from-gray-500 to-gray-600', hover: 'hover:from-gray-500 hover:to-gray-600', border: 'border-gray-400/30 hover:border-gray-300/30' },
+        video: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' },
         manual: { normal: 'from-red-500 to-red-600', hover: 'hover:from-red-500 hover:to-red-600', border: 'border-red-400/30 hover:border-red-300/30' }
       }
     };
@@ -170,7 +170,10 @@ export default function LayananSection() {
       bgColor: 'from-indigo-50 to-blue-50',
       iconBg: 'bg-gradient-to-r from-indigo-500 to-blue-600',
       url: 'https://koperasi.kdmp.id/',
-      manualBookUrl: 'https://drive.google.com/file/d/1AdVD6-Sg651f0wjyT8ywWENYML0M6nab/view?usp=drive_link'
+      videoTutorialUrl:
+        'https://drive.google.com/file/d/1pnVBRLaG2wPAXQ_V7K1bWbaKUECRPqfO/view?usp=drive_link',
+      manualBookUrl:
+        'https://drive.google.com/file/d/1bTnIuQY3KfWj0qP2eRqMtznD2wTbyHkJ/view?usp=drive_link',
     },
     {
       icon: BarChart3,
@@ -325,6 +328,7 @@ export default function LayananSection() {
                                href={module.url}
                                target="_blank"
                                rel="noopener noreferrer"
+                               referrerPolicy="no-referrer"
                                className={`block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
                              >
                                Buka Modul
@@ -345,6 +349,7 @@ export default function LayananSection() {
                                  href={module.videoTutorialUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
+                                 referrerPolicy="no-referrer"
                                  className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'video').normal} ${getButtonColors(module.title, 'video').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'video').border}`}
                                >
                                  <Play className="w-4 h-4" />
@@ -361,6 +366,7 @@ export default function LayananSection() {
                                  href={module.manualBookUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
+                                 referrerPolicy="no-referrer"
                                  className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'manual').normal} ${getButtonColors(module.title, 'manual').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'manual').border}`}
                                >
                                  <BookOpen className="w-4 h-4" />
@@ -441,6 +447,7 @@ export default function LayananSection() {
                                   href={module.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
+                                  referrerPolicy="no-referrer"
                                   className={`block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
                                 >
                                   Buka Modul
@@ -461,6 +468,7 @@ export default function LayananSection() {
                                  href={module.videoTutorialUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
+                                 referrerPolicy="no-referrer"
                                  className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'video').normal} ${getButtonColors(module.title, 'video').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'video').border}`}
                                >
                                  <Play className="w-4 h-4" />
@@ -477,6 +485,7 @@ export default function LayananSection() {
                                  href={module.manualBookUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
+                                 referrerPolicy="no-referrer"
                                  className={`flex items-center justify-center gap-2 bg-gradient-to-r ${getButtonColors(module.title, 'manual').normal} ${getButtonColors(module.title, 'manual').hover} text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm shadow-md hover:shadow-lg ${getButtonColors(module.title, 'manual').border}`}
                                >
                                  <BookOpen className="w-4 h-4" />
@@ -553,6 +562,7 @@ export default function LayananSection() {
                 href="https://anggota.kdmp.id/" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                referrerPolicy="no-referrer"
                 className="bg-white text-red-600 hover:bg-red-50 font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Mulai Sekarang
