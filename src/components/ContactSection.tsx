@@ -17,8 +17,8 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: 'Telepon & WhatsApp',
-      primary: '+62 823-2084-1260',
-      tertiary: 'WhatsApp: +62 823-2084-1260',
+      primary: '+6281181209758',
+      tertiary: 'WhatsApp: +6281181209758',
       color: 'from-green-500 to-emerald-500'
     },
     {
@@ -207,9 +207,10 @@ export default function ContactSection() {
                   {/* Action Button */}
                   {action.title === 'Chat WhatsApp' ? (
                     <a 
-                      href="https://wa.me/6282320841260" 
+                      href="https://wa.me/6281181209758" 
                       target="_blank" 
                       rel="noopener noreferrer"
+                      referrerPolicy="no-referrer"
                       className={`block w-full py-3 px-6 bg-gradient-to-r ${action.color} text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 group-hover:scale-105 text-center`}
                     >
                       {action.action}

@@ -73,12 +73,13 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-white/80 flex-shrink-0" />
                 <a 
-                  href="https://wa.me/6282320841260" 
+                  href="https://wa.me/6281181209758" 
                   target="_blank" 
                   rel="noopener noreferrer"
+                  referrerPolicy="no-referrer"
                   className="text-white/90 hover:text-green-300 transition-colors duration-300 cursor-pointer"
                 >
-                  +62 823-2084-1260
+                  +6281181209758
                 </a>
               </div>
               <div className="flex items-center space-x-3">
