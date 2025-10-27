@@ -122,7 +122,7 @@ export default function LayananSection() {
       iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600',
       url: 'https://anggota.kdmp.id/',
       videoTutorialUrl: 'https://drive.google.com/file/d/1GLoO7QLJU-ESJAjTw8Zz0kRBhQCIrngy/view?usp=drive_link',
-      manualBookUrl: 'https://drive.google.com/file/d/1vbTEFAJTiYNK5sXF3SXvikU-FyeO_sLP/view?usp=sharing'
+      manualBookUrl: 'https://drive.google.com/file/d/1pQsKW8owFuw-bQiGtxYXZubLFgaenmhX/view?usp=drive_link'
     },
     {
       icon: Stethoscope,
