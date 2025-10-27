@@ -60,10 +60,11 @@ const HeroSection = () => {
             <div className="pt-4 lg:pt-6">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://koperasi-dev.kdmp.id/login"
+                  href="https://anggota.kdmp.id/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-red-600 hover:bg-red-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                  referrerPolicy="no-referrer"
+                  className="w-full sm:w-auto bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:to-red-900 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-red-700"
                 >
                   Gabung Sekarang
                 </a>
