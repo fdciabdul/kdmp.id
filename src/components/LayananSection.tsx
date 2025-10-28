@@ -120,7 +120,7 @@ export default function LayananSection() {
       color: 'from-purple-500 to-violet-600',
       bgColor: 'from-purple-50 to-violet-50',
       iconBg: 'bg-gradient-to-r from-purple-500 to-violet-600',
-      url: 'https://anggota.kdmp.id/',
+      url: 'https://member.kdmp.id/login',
       videoTutorialUrl: 'https://drive.google.com/file/d/1BLaRyacBXw1jtG7jdh_ya1-wAVrEBIPO/view?usp=drive_link',
       manualBookUrl: 'https://drive.google.com/file/d/1pQsKW8owFuw-bQiGtxYXZubLFgaenmhX/view?usp=drive_link'
     },
