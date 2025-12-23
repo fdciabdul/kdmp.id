@@ -28,8 +28,26 @@ import {
   Play,
   GraduationCap
 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function LayananSection() {
+  const [posOpening, setPosOpening] = useState(false);
+  const [posError, setPosError] = useState<string | null>(null);
+  const posUrl = 'https://posgudang.kdmp.id/';
+  const openPOS = async () => {
+    setPosError(null);
+    setPosOpening(true);
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
+      await fetch(posUrl, { mode: 'no-cors', method: 'GET', signal: controller.signal });
+      clearTimeout(timeoutId);
+      window.location.assign(posUrl);
+    } catch {
+      setPosOpening(false);
+      setPosError('POS tidak dapat diakses saat ini. Silakan coba lagi.');
+    }
+  };
   // Function to get button colors based on module title
   const getButtonColors = (moduleTitle: string, buttonType: 'video' | 'manual') => {
     const colors = {
@@ -322,25 +340,34 @@ export default function LayananSection() {
                          </button>
                        ) : (
                          <>
-                           {/* Original Buka Modul button */}
-                           {module.url ? (
-                             <a
-                               href={module.url}
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               referrerPolicy="no-referrer"
-                               className={`block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
-                             >
-                               Buka Modul
-                             </a>
-                           ) : (
-                             <button
-                               disabled
-                               className={`w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-gray-400/30 text-sm`}
-                             >
-                               Segera Hadir
-                             </button>
-                           )}
+                      {module.title === 'Modul Point of Sales (POS)' ? (
+                        <button
+                          onClick={openPOS}
+                          disabled={posOpening}
+                          aria-label="Buka Modul POS"
+                          aria-busy={posOpening}
+                          className={`w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
+                        >
+                          {posOpening ? 'Membuka…' : 'Buka Modul'}
+                        </button>
+                      ) : module.url ? (
+                        <a
+                          href={module.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          referrerPolicy="no-referrer"
+                          className={`block w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
+                        >
+                          Buka Modul
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className={`w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 opacity-60 cursor-not-allowed border border-gray-400/30 text-sm`}
+                        >
+                          Segera Hadir
+                        </button>
+                      )}
                            
                            {/* Video Tutorial and Manual Book buttons */}
                            <div className="grid grid-cols-2 gap-3">
@@ -441,8 +468,17 @@ export default function LayananSection() {
                             </button>
                           ) : (
                             <>
-                              {/* Original Buka Modul button */}
-                              {module.url ? (
+                              {module.title === 'Modul Point of Sales (POS)' ? (
+                                <button
+                                  onClick={openPOS}
+                                  disabled={posOpening}
+                                  aria-label="Buka Modul POS"
+                                  aria-busy={posOpening}
+                                  className={`w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
+                                >
+                                  {posOpening ? 'Membuka…' : 'Buka Modul'}
+                                </button>
+                              ) : module.url ? (
                                 <a
                                   href={module.url}
                                   target="_blank"
