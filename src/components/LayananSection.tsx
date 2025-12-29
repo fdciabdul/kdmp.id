@@ -28,27 +28,8 @@ import {
   Play,
   GraduationCap
 } from 'lucide-react';
-import { useState } from 'react';
 
 export default function LayananSection() {
-  const [posOpening, setPosOpening] = useState(false);
-  const [posError, setPosError] = useState<string | null>(null);
-  const posUrl = 'https://posgudang.kdmp.id/';
-  const openPOS = async () => {
-    setPosError(null);
-    setPosOpening(true);
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 6000);
-      await fetch(posUrl, { mode: 'no-cors', method: 'GET', signal: controller.signal });
-      clearTimeout(timeoutId);
-      window.location.assign(posUrl);
-    } catch {
-      setPosOpening(false);
-      setPosError('POS tidak dapat diakses saat ini. Silakan coba lagi.');
-    }
-  };
-  // Function to get button colors based on module title
   const getButtonColors = (moduleTitle: string, buttonType: 'video' | 'manual') => {
     const colors = {
       'Modul Point of Sales (POS)': {
@@ -104,7 +85,7 @@ export default function LayananSection() {
       color: 'from-green-500 to-emerald-600',
       bgColor: 'from-green-50 to-emerald-50',
       iconBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
-      url: 'https://pos.kdmp.id/',
+      url: 'https://posgudang.kdmp.id/',
       videoTutorialUrl: 'https://drive.google.com/file/d/19cxd9IoPR2GgKvFJl6vlhD7GKOKBt4x4/view?usp=drive_link',
       manualBookUrl: 'https://drive.google.com/file/d/1a2_z1bjROiTeKUzQQJA6s54SA3aByYeZ/view?usp=drive_link'
     },
@@ -338,19 +319,9 @@ export default function LayananSection() {
                          >
                            Segera Hadir
                          </button>
-                       ) : (
-                         <>
-                      {module.title === 'Modul Point of Sales (POS)' ? (
-                        <button
-                          onClick={openPOS}
-                          disabled={posOpening}
-                          aria-label="Buka Modul POS"
-                          aria-busy={posOpening}
-                          className={`w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30 text-sm`}
-                        >
-                          {posOpening ? 'Membuka…' : 'Buka Modul'}
-                        </button>
-                      ) : module.url ? (
+                      ) : (
+                        <>
+                          {module.url ? (
                         <a
                           href={module.url}
                           target="_blank"
@@ -468,17 +439,7 @@ export default function LayananSection() {
                             </button>
                           ) : (
                             <>
-                              {module.title === 'Modul Point of Sales (POS)' ? (
-                                <button
-                                  onClick={openPOS}
-                                  disabled={posOpening}
-                                  aria-label="Buka Modul POS"
-                                  aria-busy={posOpening}
-                                  className={`w-full bg-gradient-to-r ${module.color} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 text-center border border-red-200/30`}
-                                >
-                                  {posOpening ? 'Membuka…' : 'Buka Modul'}
-                                </button>
-                              ) : module.url ? (
+                              {module.url ? (
                                 <a
                                   href={module.url}
                                   target="_blank"
