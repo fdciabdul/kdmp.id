@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  // For GitHub Pages: set basePath to your repo name (e.g., '/koperasi')
+  // Comment out or remove if using custom domain
+  // basePath: '/koperasi',
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
